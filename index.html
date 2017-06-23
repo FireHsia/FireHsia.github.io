@@ -94,11 +94,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="吴新莹的技术博客">
+<meta property="og:title" content="FireHsia&#39;s Blog">
 <meta property="og:url" content="www.MrXiaY.github.io/index.html">
-<meta property="og:site_name" content="吴新莹的技术博客">
+<meta property="og:site_name" content="FireHsia&#39;s Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴新莹的技术博客">
+<meta name="twitter:title" content="FireHsia&#39;s Blog">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>吴新莹的技术博客</title>
+  <title>FireHsia's Blog</title>
   
 
 
@@ -170,12 +170,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">吴新莹的技术博客</span>
+        <span class="site-title">FireHsia's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">love, diligence and perseverance</p>
+        <p class="site-subtitle">Love, Diligence and Perseverance</p>
       
   </div>
 
@@ -273,6 +273,146 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="www.MrXiaY.github.io/2017/06/23/secondBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FireHsia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/rooticon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FireHsia's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/23/secondBlog/" itemprop="url">iOS CATransition动画实现SDWebImage图片下载完成渐变动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T14:39:57+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS动画/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS动画</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CATransition转场动画, 有效缓冲SDWebImage下载图片效果</p>
+<blockquote>
+<p> 代码实现</p>
+<p> 在图片下载完成的block中给image.layer添加转场动画</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder &#123;</div><div class="line">     __weak typeof(self) weakSelf = self;</div><div class="line">    [self sd_setImageWithURL:url placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) &#123;</div><div class="line"></div><div class="line">        if (image &amp;&amp; cacheType == SDImageCacheTypeNone) &#123;</div><div class="line">            CATransition *transition = [CATransition animation];</div><div class="line">            transition.type = kCATransitionFade;</div><div class="line">            transition.duration = 0.3;</div><div class="line">            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];</div><div class="line">            [weakSelf.layer addAnimation:transition forKey:nil];</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a><font color="#000000">原文地址</font></h3><p><a href="http://www.jianshu.com/p/f0b3db7edc93" target="_blank" rel="external">http://www.jianshu.com/p/f0b3db7edc93</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="www.MrXiaY.github.io/2017/06/23/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,7 +422,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="吴新莹的技术博客">
+      <meta itemprop="name" content="FireHsia's Blog">
     </span>
 
     
@@ -315,6 +455,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日常/" itemprop="url" rel="index">
+                    <span itemprop="name">日常</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -341,7 +503,7 @@
       
         
           
-            <p>Welcome to 吴新莹的技术博客</p>
+            <p>Welcome to FireHsia Blog</p>
 
           
         
@@ -421,14 +583,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
