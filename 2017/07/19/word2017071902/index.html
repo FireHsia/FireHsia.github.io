@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日常," />
+  <meta name="keywords" content="iOS笔记," />
 
 
 
@@ -95,17 +95,20 @@
 
 
 
-<meta name="description" content="Welcome to FireHsia’s Blog   博客用于记录总结分享学习过程, 转载和参考文献会在文中做标记, 如有侵权联系我立刻删除 最近脑子不好, 好记性不如烂笔头, 记录对我来说很关键, 温故知新 不止于专业技能, 还有平时生活点滴见解, 方便记录">
-<meta name="keywords" content="日常">
+<meta name="description" content="####关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  ####代码初始化和XIB初始化所执行方法   一般我们自定义view的话会重写view的(instancetype)initWithFrame:(CGRect)frame```方法1234567在该方法中添加自定义控件&amp;gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写```- (ins">
+<meta name="keywords" content="iOS笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="www.FireHsia.github.io/2017/06/23/hello-world/index.html">
+<meta property="og:title" content="iOS 代码初始化StoryBoard和XIB控件">
+<meta property="og:url" content="www.FireHsia.github.io/2017/07/19/word2017071902/index.html">
 <meta property="og:site_name" content="FireHsia&#39;s Blog">
-<meta property="og:description" content="Welcome to FireHsia’s Blog   博客用于记录总结分享学习过程, 转载和参考文献会在文中做标记, 如有侵权联系我立刻删除 最近脑子不好, 好记性不如烂笔头, 记录对我来说很关键, 温故知新 不止于专业技能, 还有平时生活点滴见解, 方便记录">
-<meta property="og:updated_time" content="2017-07-19T03:08:28.000Z">
+<meta property="og:description" content="####关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  ####代码初始化和XIB初始化所执行方法   一般我们自定义view的话会重写view的(instancetype)initWithFrame:(CGRect)frame```方法1234567在该方法中添加自定义控件&amp;gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写```- (ins">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1890332-079557000da9ced8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-19T06:44:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to FireHsia’s Blog   博客用于记录总结分享学习过程, 转载和参考文献会在文中做标记, 如有侵权联系我立刻删除 最近脑子不好, 好记性不如烂笔头, 记录对我来说很关键, 温故知新 不止于专业技能, 还有平时生活点滴见解, 方便记录">
+<meta name="twitter:title" content="iOS 代码初始化StoryBoard和XIB控件">
+<meta name="twitter:description" content="####关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  ####代码初始化和XIB初始化所执行方法   一般我们自定义view的话会重写view的(instancetype)initWithFrame:(CGRect)frame```方法1234567在该方法中添加自定义控件&amp;gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写```- (ins">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="www.FireHsia.github.io/2017/06/23/hello-world/"/>
+  <link rel="canonical" href="www.FireHsia.github.io/2017/07/19/word2017071902/"/>
 
 
 
 
 
-  <title>Hello World | FireHsia's Blog</title>
+  <title>iOS 代码初始化StoryBoard和XIB控件 | FireHsia's Blog</title>
   
 
 
@@ -277,8 +280,8 @@
   
   
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.FireHsia.github.io/2017/06/23/hello-world/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="www.FireHsia.github.io/2017/07/19/word2017071902/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FireHsia">
@@ -295,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">iOS 代码初始化StoryBoard和XIB控件</h1>
         
 
         <div class="post-meta">
@@ -307,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T14:39:57+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T14:40:43+08:00">
+                2017-07-19
               </time>
             
 
@@ -330,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
+                  <a href="/categories/iOS笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS笔记</span>
                   </a>
                 </span>
 
@@ -361,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  92
+                  261
                 </span>
               
 
@@ -395,12 +398,27 @@
       
 
       
-        <p><strong><em>  Welcome to FireHsia’s Blog </em></strong></p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="joker.jpeg"></p>
+<p>####关于纯代码控件和SB控件孰优孰劣, 这里不予探讨<br>可以参考一下<a href="http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/" target="_blank" rel="external">唐巧大神的文章</a></p>
+<hr>
+<p>####代码初始化和XIB初始化所执行方法</p>
+<blockquote>
 <ul>
-<li>博客用于记录总结分享学习过程, 转载和参考文献会在文中做标记, 如有侵权<a href="firehsia1204@gmail.com">联系我</a>立刻删除</li>
-<li>最近脑子不好, 好记性不如烂笔头, 记录对我来说很关键, 温故知新</li>
-<li>不止于专业技能, 还有平时生活点滴见解, 方便记录</li>
+<li>一般我们自定义view的话会重写view的<figure class="highlight plain"><figcaption><span>(instancetype)initWithFrame:(CGRect)frame```方法</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">在该方法中添加自定义控件</div><div class="line">&gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写</div><div class="line">```- (instancetype)initWithCoder:(NSCoder *)aDecoder```方法</div><div class="line"></div><div class="line">***</div><div class="line">####用代码初始化StoryBoard和XIB控件的三种方法</div><div class="line">-  第一种 通过StoryBoard的名字拿到SB 再通过SB调用```instantiateInitialViewController</div></pre></td></tr></table></figure>
+</li>
 </ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">UIStoryboard *stroyB = [UIStoryboard storyboardWithName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NavViewController *naVC = [stroyB instantiateInitialViewController];</div><div class="line"></div><div class="line"> //  由storyboard根据ViewController的storyBoard ID来获取我们要切换的视图控制器</div><div class="line">ViewController *VC = [stroyB instantiateViewControllerWithIdentifier:@&quot;StoryBoard中VC的Identifier&quot;];</div><div class="line">NSLog(@&quot;%@&quot;, [naVC class]);</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1890332-079557000da9ced8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>第二种 创建XIB文件 通过<figure class="highlight plain"><figcaption><span>mainBundle] loadNib ```加载NIB文件</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">ViewController *viewVC = [[[NSBundle mainBundle] loadNibNamed:@&quot;XIB文件名&quot; owner:self options:nil] firstObject];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>注: XIB文件名要与创建自定义的V或VC名字对应</p>
+<ul>
+<li>第三种 通过 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">ViewController *viewVC = [[ViewController alloc] initWithNibName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -438,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/日常/" rel="tag"># 日常</a>
+            <a href="/tags/iOS笔记/" rel="tag"># iOS笔记</a>
           
         </div>
       
@@ -451,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/23/secondBlog/" rel="next" title="iOS CATransition动画实现SDWebImage图片下载完成渐变动画">
-                <i class="fa fa-chevron-left"></i> iOS CATransition动画实现SDWebImage图片下载完成渐变动画
+              <a href="/2017/07/19/word2017071901/" rel="next" title="游戏与生活">
+                <i class="fa fa-chevron-left"></i> 游戏与生活
               </a>
             
           </div>
@@ -460,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/19/word2017071901/" rel="prev" title="游戏与生活">
-                游戏与生活 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
