@@ -397,26 +397,24 @@
         
           
             <p><img src="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="joker.jpeg"></p>
-<p>##关于纯代码控件和SB控件孰优孰劣, 这里不予探讨<br>可以参考一下<a href="http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/" target="_blank" rel="external">唐巧大神的文章</a></p>
+<h3 id="关于纯代码控件和SB控件孰优孰劣-这里不予探讨"><a href="#关于纯代码控件和SB控件孰优孰劣-这里不予探讨" class="headerlink" title="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨"></a>关于纯代码控件和SB控件孰优孰劣, 这里不予探讨</h3><p>可以参考一下<a href="http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/" target="_blank" rel="external">唐巧大神的文章</a></p>
 <hr>
-<p>##代码初始化和XIB初始化所执行方法</p>
-<blockquote>
+<h3 id="代码初始化和XIB初始化所执行方法"><a href="#代码初始化和XIB初始化所执行方法" class="headerlink" title="代码初始化和XIB初始化所执行方法"></a>代码初始化和XIB初始化所执行方法</h3><blockquote>
 <ul>
-<li>一般我们自定义view的话会重写view的<figure class="highlight plain"><figcaption><span>(instancetype)initWithFrame:(CGRect)frame```方法</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">在该方法中添加自定义控件</div><div class="line">&gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写</div><div class="line">```- (instancetype)initWithCoder:(NSCoder *)aDecoder```方法</div><div class="line"></div><div class="line">***</div><div class="line">##用代码初始化StoryBoard和XIB控件的三种方法</div><div class="line">-  第一种 通过StoryBoard的名字拿到SB 再通过SB调用```instantiateInitialViewController</div></pre></td></tr></table></figure>
-</li>
+<li>一般我们自定义view的话会重写view的  <figure class="highlight plain"><figcaption><span>(instancetype)initWithFrame:(CGRect)frame ```方法, 在该方法中添加自定义控件</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; - 而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写``` - (instancetype)initWithCoder:(NSCoder *)aDecoder ```方法</div><div class="line"></div><div class="line">***</div><div class="line">### 用代码初始化StoryBoard和XIB控件的三种方法</div><div class="line">- 第一种 通过StoryBoard的名字拿到SB 再通过SB调用``` instantiateInitialViewController</div></pre></td></tr></table></figure></li>
 </ul>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">UIStoryboard *stroyB = [UIStoryboard storyboardWithName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NavViewController *naVC = [stroyB instantiateInitialViewController];</div><div class="line"></div><div class="line"> //  由storyboard根据ViewController的storyBoard ID来获取我们要切换的视图控制器</div><div class="line">ViewController *VC = [stroyB instantiateViewControllerWithIdentifier:@&quot;StoryBoard中VC的Identifier&quot;];</div><div class="line">NSLog(@&quot;%@&quot;, [naVC class]);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UIStoryboard *stroyB = [UIStoryboard storyboardWithName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NavViewController *naVC = [stroyB instantiateInitialViewController];</div><div class="line">//  由storyboard根据ViewController的storyBoard ID来获取我们要切换的视图控制器</div><div class="line">ViewController *VC = [stroyB instantiateViewControllerWithIdentifier:@&quot;StoryBoard中VC的Identifier&quot;];</div><div class="line">NSLog(@&quot;%@&quot;, [naVC class]);</div></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/1890332-079557000da9ced8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <ul>
 <li>第二种 创建XIB文件 通过<figure class="highlight plain"><figcaption><span>mainBundle] loadNib ```加载NIB文件</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">ViewController *viewVC = [[[NSBundle mainBundle] loadNibNamed:@&quot;XIB文件名&quot; owner:self options:nil] firstObject];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>注: XIB文件名要与创建自定义的V或VC名字对应</p>
-<ul>
-<li>第三种 通过 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">ViewController *viewVC = [[ViewController alloc] initWithNibName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure></li>
-</ul>
 </blockquote>
+<ul>
+<li>第三种通过 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">ViewController *viewVC = [[ViewController alloc] initWithNibName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure></li>
+</ul>
 
           
         
