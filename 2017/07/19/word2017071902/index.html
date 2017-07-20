@@ -1,196 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
 
-    <title>
-      Tag: tags | FireHsia&#39;s Blog 
-    </title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="FireHsia" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-      <meta name="author" content="FireHsia">
-    
-    
 
-    <meta name="description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  代码初始化和XIB初始化所执行方法  一般我们自定义view的话会重写view的-(instancetype)initWithFrame:(CGRect)frame方法, 在该方法中添加自定义控件  而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写- (instancetype)initWithCoder:">
+
+<meta name="description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章">
 <meta name="keywords" content="iOS笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tag: tags | FireHsia&#39;s Blog">
+<meta property="og:title" content="iOS 代码初始化StoryBoard和XIB控件">
 <meta property="og:url" content="www.FireHsia.github.io/2017/07/19/word2017071902/index.html">
 <meta property="og:site_name" content="FireHsia&#39;s Blog">
-<meta property="og:description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  代码初始化和XIB初始化所执行方法  一般我们自定义view的话会重写view的-(instancetype)initWithFrame:(CGRect)frame方法, 在该方法中添加自定义控件  而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写- (instancetype)initWithCoder:">
+<meta property="og:description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1890332-079557000da9ced8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-19T07:39:57.000Z">
+<meta property="og:updated_time" content="2017-07-20T09:14:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tag: tags | FireHsia&#39;s Blog">
-<meta name="twitter:description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章  代码初始化和XIB初始化所执行方法  一般我们自定义view的话会重写view的-(instancetype)initWithFrame:(CGRect)frame方法, 在该方法中添加自定义控件  而如果用XIB自定义控件的话, 又想在代码中控制, 需要重写- (instancetype)initWithCoder:">
+<meta name="twitter:title" content="iOS 代码初始化StoryBoard和XIB控件">
+<meta name="twitter:description" content="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨可以参考一下唐巧大神的文章">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-    
-    
-    
-      <link rel="icon" type="image/x-icon" href="/favicon.png">
-    
-    <link rel="stylesheet" href="/css/uno.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="/css/archive.css">
-    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="FireHsia&#39;s Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Tag: tags | FireHsia&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: true,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
 
 </head>
 <body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">FireHsia</a></h1>
+        </hgroup>
 
-    <span class="mobile btn-mobile-menu">
-        <i class="icon icon-list btn-mobile-menu__icon"></i>
-        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
-    </span>
-
-    
-
-<header class="panel-cover panel-cover--collapsed">
-
-
-  <div class="panel-main">
-
-  
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
+        
+        <p class="header-subtitle">Love, Diligence and Perseverance</p>
+        
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">FireHsia&#39;s Blog</a></h1>
-        <hr class="panel-cover__divider" />
 
         
-        <p class="panel-cover__description">
-          Love, Diligence and Perseverance
-        </p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
         
 
-        <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-
-              
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:&#102;&#105;&#114;&#101;&#104;&#115;&#105;&#97;&#49;&#50;&#48;&#52;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/FireHsia" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/eec143f2560d" title="简书"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/106907899626745906476" title="Google"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
                 
-                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
-              
                 
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
-              
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS动画/">iOS动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS笔记/">iOS笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/馊鸡汤/">馊鸡汤</a></li></ul>
+                    </div>
+                </section>
                 
-                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
-              
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub Page</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">Themes Author</a>
+                    
+                    </div>
+                </section>
+                
 
-            </ul>
-          </nav>
-
-          <!-- ----------------------------
-To add a new social icon simply duplicate one of the list items from below
-and change the class in the <i> tag to match the desired social network
-and then add your link to the <a>. Here is a full list of social network
-classes that you can use:
-
-    icon-social-500px
-    icon-social-behance
-    icon-social-delicious
-    icon-social-designer-news
-    icon-social-deviant-art
-    icon-social-digg
-    icon-social-dribbble
-    icon-social-facebook
-    icon-social-flickr
-    icon-social-forrst
-    icon-social-foursquare
-    icon-social-github
-    icon-social-google-plus
-    icon-social-hi5
-    icon-social-instagram
-    icon-social-lastfm
-    icon-social-linkedin
-    icon-social-medium
-    icon-social-myspace
-    icon-social-path
-    icon-social-pinterest
-    icon-social-rdio
-    icon-social-reddit
-    icon-social-skype
-    icon-social-spotify
-    icon-social-stack-overflow
-    icon-social-steam
-    icon-social-stumbleupon
-    icon-social-treehouse
-    icon-social-tumblr
-    icon-social-twitter
-    icon-social-vimeo
-    icon-social-xbox
-    icon-social-yelp
-    icon-social-youtube
-    icon-social-zerply
-    icon-mail
-
--------------------------------->
-
-<!-- add social info here -->
-
-
-
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">iOS Java 爱前端 爱生活</div>
+                </section>
+                
+            </div>
         </div>
-
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">FireHsia</a></h1>
       </div>
-
-    </div>
-
-    <div class="panel-cover--overlay"></div>
-  </div>
-</header>
-
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner entry">
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">FireHsia</a></h1>
+            </hgroup>
             
-
-<article class="post-container post-container--single">
-
-  <header class="post-header">
-    
-    <h1 class="post-title">iOS 代码初始化StoryBoard和XIB控件</h1>
-
-    
-
-    <div class="post-meta">
-      <time datetime="2017-07-19" class="post-meta__date date">2017-07-19</time> 
-
-      <span class="post-meta__tags tags">
-
-          
-            <font class="categories">
-            &#8226; 分类:
-            <a class="categories-link" href="/categories/iOS笔记/">iOS笔记</a>
-            </font>
-          
-
-          
-             &#8226; 标签:
-            <font class="tags">
-              <a class="tags-link" href="/tags/iOS笔记/">iOS笔记</a>
-            </font>
-          
-
-      </span>
+            <p class="header-subtitle">Love, Diligence and Perseverance</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:&#102;&#105;&#114;&#101;&#104;&#115;&#105;&#97;&#49;&#50;&#48;&#52;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/FireHsia" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/eec143f2560d" title="简书"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/106907899626745906476" title="Google"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
     </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-word2017071902" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/19/word2017071902/" class="article-date">
+      <time datetime="2017-07-19T06:40:43.000Z" itemprop="datePublished">2017-07-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 代码初始化StoryBoard和XIB控件
+    </h1>
+  
 
-  </header>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-  <section id="post-content" class="article-content post">
-    <p><img src="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="joker.jpeg"></p>
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS笔记/">iOS笔记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="http://upload-images.jianshu.io/upload_images/1890332-b4a6f8a92130c60c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="joker.jpeg"></p>
 <h3 id="关于纯代码控件和SB控件孰优孰劣-这里不予探讨"><a href="#关于纯代码控件和SB控件孰优孰劣-这里不予探讨" class="headerlink" title="关于纯代码控件和SB控件孰优孰劣, 这里不予探讨"></a>关于纯代码控件和SB控件孰优孰劣, 这里不予探讨</h3><p>可以参考一下<a href="http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/" target="_blank" rel="external">唐巧大神的文章</a></p>
+<a id="more"></a>
 <hr>
 <h3 id="代码初始化和XIB初始化所执行方法"><a href="#代码初始化和XIB初始化所执行方法" class="headerlink" title="代码初始化和XIB初始化所执行方法"></a>代码初始化和XIB初始化所执行方法</h3><blockquote>
 <ul>
@@ -204,81 +330,236 @@ classes that you can use:
 <h3 id="用代码初始化StoryBoard和XIB控件的三种方法"><a href="#用代码初始化StoryBoard和XIB控件的三种方法" class="headerlink" title="用代码初始化StoryBoard和XIB控件的三种方法"></a>用代码初始化StoryBoard和XIB控件的三种方法</h3><ul>
 <li>第一种 通过StoryBoard的名字拿到SB 再通过SB调用<code>instantiateInitialViewController</code>方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UIStoryboard *stroyB = [UIStoryboard storyboardWithName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NavViewController *naVC = [stroyB instantiateInitialViewController];</div><div class="line">//由storyboard根据ViewController的storyBoard ID来获取我们要切换的视图控制器</div><div class="line">ViewController *VC = [stroyB instantiateViewControllerWithIdentifier:@&quot;StoryBoard中VC的Identifier&quot;];</div><div class="line">NSLog(@&quot;%@&quot;, [naVC class]);</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIStoryboard</span> *stroyB = [<span class="built_in">UIStoryboard</span> storyboardWithName:<span class="string">@"StoryBoard文件名"</span> bundle:<span class="literal">nil</span>];</div><div class="line">NavViewController *naVC = [stroyB instantiateInitialViewController];</div><div class="line"><span class="comment">//由storyboard根据ViewController的storyBoard ID来获取我们要切换的视图控制器</span></div><div class="line">ViewController *VC = [stroyB instantiateViewControllerWithIdentifier:<span class="string">@"StoryBoard中VC的Identifier"</span>];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, [naVC <span class="keyword">class</span>]);</div></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/1890332-079557000da9ced8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <ul>
 <li>第二种 创建XIB文件 通过<code>[NSBundle mainBundle]loadNib</code>加载NIB文件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ViewController *viewVC = [[[NSBundle mainBundle] loadNibNamed:@&quot;XIB文件名&quot; owner:self options:nil] firstObject];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ViewController *viewVC = [[[<span class="built_in">NSBundle</span> mainBundle] loadNibNamed:<span class="string">@"XIB文件名"</span> owner:<span class="keyword">self</span> options:<span class="literal">nil</span>] firstObject];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, [viewVC <span class="keyword">class</span>]);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>注: XIB文件名要与创建自定义的V或VC名字对应</p>
 </blockquote>
 <ul>
 <li>第三种通过<code>initWithNibNameXIB</code>文件名字初始化</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ViewController *viewVC = [[ViewController alloc] initWithNibName:@&quot;StoryBoard文件名&quot; bundle:nil];</div><div class="line">NSLog(@&quot;%@&quot;, [viewVC class]);</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ViewController *viewVC = [[ViewController alloc] initWithNibName:<span class="string">@"StoryBoard文件名"</span> bundle:<span class="literal">nil</span>];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, [viewVC <span class="keyword">class</span>]);</div></pre></td></tr></table></figure>
 
-  </section>
-
-  <section class="post-comments">
-
-    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+      
+    </div>
     
-</section>
-
-
-</article>
-
-
-            <footer class="footer">
-
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+  </div>
+  
     
-</footer>
-        </div>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/19/word2017071902/">iOS 代码初始化StoryBoard和XIB控件</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">FireHsia</a></p>
+        <p><span>发布时间:</span>2017-07-19, 14:40:43</p>
+        <p><span>最后更新:</span>2017-07-20, 17:14:54</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/19/word2017071902/" title="iOS 代码初始化StoryBoard和XIB控件">www.FireHsia.github.io/2017/07/19/word2017071902/</a>
+            <span class="copy-path" data-clipboard-text="原文: www.FireHsia.github.io/2017/07/19/word2017071902/　　作者: FireHsia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-    <!-- js files -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/scale.fix.js"></script>
-    
-
-    
-
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-            MathJax.Hub.Config({ 
-                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
-            });
-        });
-    </script>
 
 
-    
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/07/19/word2017071901/">
+                    游戏与生活
+                </a>
+            </div>
+        
+    </nav>
 
-    <script src="/js/awesome-toc.min.js"></script>
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于纯代码控件和SB控件孰优孰劣-这里不予探讨"><span class="toc-number">1.</span> <span class="toc-text">关于纯代码控件和SB控件孰优孰劣, 这里不予探讨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码初始化和XIB初始化所执行方法"><span class="toc-number">2.</span> <span class="toc-text">代码初始化和XIB初始化所执行方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用代码初始化StoryBoard和XIB控件的三种方法"><span class="toc-number">3.</span> <span class="toc-text">用代码初始化StoryBoard和XIB控件的三种方法</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-2 i,
+        .toc-level-2 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
     <script>
-        $(document).ready(function(){
-            $.awesome_toc({
-                overlay: true,
-                contentId: "post-content",
-            });
-        });
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
     </script>
 
 
+
     
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"iOS 代码初始化StoryBoard和XIB控件　| FireHsia's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
 
-    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+    
+</div>
 
 
-    <!--kill ie6 -->
-<!--[if IE 6]>
-  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
-<![endif]-->
 
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2139462';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/07/19/word2017071901/" title="下一篇: 游戏与生活">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/19/word2017071902/">iOS 代码初始化StoryBoard和XIB控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/19/word2017071901/">游戏与生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/secondBlog/">iOS CATransition动画实现SDWebImage图片下载完成渐变动画</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 FireHsia
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>
