@@ -21,12 +21,10 @@
 <meta property="og:url" content="www.FireHsia.github.io/about/index.html">
 <meta property="og:site_name" content="FireHsia&#39;s Blog">
 <meta property="og:description" content="iOS / Web Developer">
-<meta property="og:image" content="/images/rooticon.jpg">
-<meta property="og:updated_time" content="2017-07-19T03:01:15.000Z">
+<meta property="og:updated_time" content="2017-07-21T09:01:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我是谁">
 <meta name="twitter:description" content="iOS / Web Developer">
-<meta name="twitter:image" content="/images/rooticon.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -328,7 +326,6 @@
 
           
         <p>iOS / Web Developer</p>
-<p><img src="/images/rooticon.jpg" alt="image"></p>
 
       
     </div>
@@ -381,7 +378,7 @@
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = '//firehsia.disqus.com/embed.js';
+            s.src = 'https://firehsia.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
@@ -390,6 +387,7 @@
     <script> loadComment(); </script>
 
 </section>
+
 
 
     
@@ -447,7 +445,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 1;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
