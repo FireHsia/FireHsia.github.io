@@ -280,6 +280,15 @@
       <time datetime="2017-07-19T06:40:43.000Z" itemprop="datePublished">2017-07-19</time>
 </a>
 
+ 
+    <a href="/2017/07/19/word2017071902/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/07/19/word2017071902/"></span>
+        
+    </a>
 
     </div>
   
@@ -345,6 +354,15 @@
       <time datetime="2017-07-19T02:54:06.000Z" itemprop="datePublished">2017-07-19</time>
 </a>
 
+ 
+    <a href="/2017/07/19/word2017071901/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/07/19/word2017071901/"></span>
+        
+    </a>
 
     </div>
   
@@ -413,6 +431,15 @@
       <time datetime="2017-06-23T06:39:57.000Z" itemprop="datePublished">2017-06-23</time>
 </a>
 
+ 
+    <a href="/2017/06/23/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/06/23/hello-world/"></span>
+        
+    </a>
 
     </div>
   
@@ -478,6 +505,15 @@
       <time datetime="2017-06-23T06:39:57.000Z" itemprop="datePublished">2017-06-23</time>
 </a>
 
+ 
+    <a href="/2017/06/23/secondBlog/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/06/23/secondBlog/"></span>
+        
+    </a>
 
     </div>
   
@@ -597,6 +633,22 @@
 
     
 
+    
+        <script id="dsq-count-scr" src="//firehsia.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
      
 
 
