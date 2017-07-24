@@ -4,9 +4,9 @@
   <subtitle>Love, Diligence and Perseverance</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="www.FireHsia.github.io/"/>
+  <link href="firehsia.com/"/>
   <updated>2017-07-24T02:07:02.000Z</updated>
-  <id>www.FireHsia.github.io/</id>
+  <id>firehsia.com/</id>
   
   <author>
     <name>FireHsia</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>iOS 代码初始化StoryBoard和XIB控件</title>
-    <link href="www.FireHsia.github.io/2017/07/19/word2017071902/"/>
-    <id>www.FireHsia.github.io/2017/07/19/word2017071902/</id>
+    <link href="firehsia.com/2017/07/19/word2017071902/"/>
+    <id>firehsia.com/2017/07/19/word2017071902/</id>
     <published>2017-07-19T06:40:43.000Z</published>
     <updated>2017-07-24T02:07:02.000Z</updated>
     
@@ -61,14 +61,14 @@
     </summary>
     
     
-      <category term="iOS笔记" scheme="www.FireHsia.github.io/tags/iOS%E7%AC%94%E8%AE%B0/"/>
+      <category term="iOS笔记" scheme="firehsia.com/tags/iOS%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>游戏与生活</title>
-    <link href="www.FireHsia.github.io/2017/07/19/word2017071901/"/>
-    <id>www.FireHsia.github.io/2017/07/19/word2017071901/</id>
+    <link href="firehsia.com/2017/07/19/word2017071901/"/>
+    <id>firehsia.com/2017/07/19/word2017071901/</id>
     <published>2017-07-19T02:54:06.000Z</published>
     <updated>2017-07-24T02:06:53.000Z</updated>
     
@@ -104,14 +104,14 @@
     </summary>
     
     
-      <category term="馊鸡汤" scheme="www.FireHsia.github.io/tags/%E9%A6%8A%E9%B8%A1%E6%B1%A4/"/>
+      <category term="馊鸡汤" scheme="firehsia.com/tags/%E9%A6%8A%E9%B8%A1%E6%B1%A4/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="www.FireHsia.github.io/2017/06/23/hello-world/"/>
-    <id>www.FireHsia.github.io/2017/06/23/hello-world/</id>
+    <link href="firehsia.com/2017/06/23/hello-world/"/>
+    <id>firehsia.com/2017/06/23/hello-world/</id>
     <published>2017-06-23T06:39:57.000Z</published>
     <updated>2017-07-24T02:06:42.000Z</updated>
     
@@ -132,7 +132,7 @@
     </summary>
     
     
-      <category term="日常" scheme="www.FireHsia.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="firehsia.com/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
